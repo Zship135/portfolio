@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="mediaqueries.css">
+    </head>
+    <body>
+        <nav id = "desktop-nav">
+            <div class = "logo">Zachary Shipley</div>
+            <div>
+                <ul class = "nav-links">
+                    <li><a href = "#about">About</a></li>
+                    <li><a href = "#experience">Experience</a></li>
+                    <li><a href = "#projects">Projects</a></li>
+                    <li><a href = "#contact">Contact</a></li>
+                </ul>
+            </div> 
+        </nav>
+        <nav id = "hamburger-nav">
+            <div class = "logo">Zachary Shipley</div>
+            <div class = "hamburger-menu">
+                <div class = "hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class = "menu-links">
+                        <li><a href = "#about" onclick="toggleMenu()"">About</a></li>
+                        <li><a href = "#experience" onclick="toggleMenu()">Experience</a></li>
+                        <li><a href = "#projects" onclick="toggleMenu()">Projects</a></li>
+                        <li><a href = "#contact" onclick="toggleMenu()">Contact</a></li>
+                </div>
+            </div>
+        </nav>
+        <section id = "profile">
+            <div class = "section_pic-container">
+                <img src = "./assets/profile-pic.jpeg" alt = "Zachary Shipley profile picture">
+            </div>
+            <div class = "section_text">
+                <p class = "section_text_p1">Hello, I'm</p>
+                <h1 class = "title">Zachary Shipley</h1>
+                <p class = "section_text_p2">Applied Mathematics and Computer Science Student at Baldwin Wallace University</p>
+                <div class = "btn-container">
+                    <button class = "btn btn-color-2" onclick = "window.open('./assets/ZacharyShipleyResume.pdf')">
+                        View Resume
+                    </button>
+                    <button class = "btn btn-color-1" onclick = "location.href = './#contact'">
+                        Contact Info
+                    </button>
+                </div>
+                <div id = "socials-container">
+                    <img src = "./assets/linkedin.png" 
+                        alt = "My Linkedin Profile" 
+                        class = "icon linkedin-icon" 
+                        onclick = "location.href = 'https://www.linkedin.com/in/zachary-shipley-7950b6228/'"
+                    />
+                    <img src = "./assets/github.png" 
+                        alt = "My Github Profile" 
+                        class = "icon github-icon" 
+                        onclick = "location.href = 'https://github.com/Zship135'"
+                    />  
+                </div>
+            </div>
+        </section>
+        <section id = "about">
+            <p class = "section_text_p1">Get to Know More</p>
+            <h1 class = "title">About Me</h1>
+            <div class = "section-container">
+                <div class = "section_pic-container">
+                    <img
+                                src = "./assets/ExperiencePhoto.jpeg"
+                                alt = "Experience Photo"
+                                class = "about-pic"
+                    />
+                </div>
+                <div class = "about-details-container">
+                    <div class = "about-containers">
+                        <div class = "details-container">
+                            <h3>Experience</h3>
+                            <p2>
+                                    During my time as a curatorial intern at the Cleveland Museum of Art, 
+                                I primarily utilized Microsoft Office Suite to support a range of 
+                                administrative and analytical tasks. I have hands-on experience in data 
+                                analysis and visualization using both Python and R, and I am proficient in 
+                                multiple programming languages including C, Java, SQL, HTML/CSS, R, and 
+                                Python. Much of my academic training has emphasized working with data and 
+                                database systems, particularly through projects involving SQLite and 
+                                Microsoft SQL Server.
+                            </p2>
+                        </div>
+                        <div class = "details-container">
+                            <h3>Education</h3>
+                            <p2>
+                                    I received my Associate of Science from Cuyahoga Community College in 2024, where I developed my foundation for
+                                computer science and upper level mathematics. During my time at Tri-C, I was on the Dean's List for for two
+                                consecutive years. <br /> <br />    I am currently pursuing a Bachelor of Science in both Applied Mathematics and Computer
+                                Science at Baldwin Wallace University. I am expecting to graduate in the spring of 2026. During my time at BW,
+                                I have also been on the Dean's List. In addition, I am a member of the math honors society Kappa Mu Epsilon.
+                                For the 2024-2025 academic year, I was a member of the Sherwin-Williams Career Accelorator Program, where I gained professional 
+                                insight and networking expereince. On May 1, I gave a presentation on my robotics research in swarming behavior
+                                at the 2025 Ovation event at Baldwin Wallace University.  
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id = "experience">
+            <p class = "section_text_p1">Explore my</p>
+            <h1 class = "title">Experience</h1>
+            <div class = "experience-details-container">
+                <div class = "about-containers">
+                    <div class = "details-container">
+                        <h2 class = "experience-subtitle">Databases and Data Science</h2>
+                        <div class = "article-container">
+                            <article>
+                                <div>
+                                    <h3>SQLite</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <h3>SQLServer</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <h3>Python</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <h3>R</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <h3>Pandas</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class = "details-container">
+                        <h2 class = "experience-subtitle">Programming Languages</h2>
+                        <div class = "article-container">
+                            <article>
+                                <div>
+                                    <h3>Java</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <h3>C</h3>
+                                    <p>Intermediate</p>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <h3>HTML</h3>
+                                    <p>Beginner</p>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <h3>CSS</h3>
+                                    <p>Beginner</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id = "projects">
+            <p class = "section_text_p1">Check Out My Recent</p>
+            <h1 class = "title">Projects</h1>
+            <div class = "experience-details-container">
+                <div class = "about-containers">
+                <div class = "details-container color-container">
+                    <div class = "article-container">
+                        <img src = "./assets/Project3.png" alt = "Project 3 Screenshot" class = "project-img"/>
+                    </div>
+                    <h2 class = "experience-subtitle project-title">"Plight" Video Game</h2>
+                    <div class = "btn-container">
+                        <button class = "btn btn-color-2 project-btn" onclick = "location.href='https://youtu.be/mGcPBKrA0hM?si=D1LCyA1qn58BYvUm'">
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+                <div class = "details-container color-container">
+                    <div class = "article-container">
+                        <img src = "./assets/Project2.png" alt = "Project 1 Screenshot" class = "project-img"/>
+                    </div>
+                    <h2 class = "experience-subtitle project-title">Robotics Research</h2>
+                    <div class = "btn-container">
+                        <button class = "btn btn-color-2 project-btn" onclick = "window.open('./assets/Ovation_ZacharyShipley_099.pdf')">
+                            View PDF
+                        </button>
+                    </div>
+                </div>
+                <div class = "details-container color-container">
+                    <div class = "article-container">
+                        <img src = "./assets/Project1.png" alt = "Project 1 Screenshot" class = "project-img"/>
+                    </div>
+                    <h2 class = "experience-subtitle project-title">Minesweeper</h2>
+                    <div class = "btn-container">
+                        <button class = "btn btn-color-2 project-btn" onclick = "location.href='https://github.com/Zship135/Projects/tree/main/MineSweeper'">
+                            Github
+                        </button>
+                    </div>
+                </div></div>
+            </div>
+        </section>
+        <section id = "contact">
+            <p class = "section_text_p1">Get in Touch</p>
+            <h1 class = "title">Contact Me</h1>
+            <div class = "contact-info-upper-container">
+                <div class = "contact-info-container">
+                    <img src = "./assets/email.png" alt = "Email Icon" class = "icon contact-icon"/>
+                    <p><a href = "mailto:zshipley135@gmail.com">zshipley135@gmail.com</a></p>
+                </div>
+            </div>
+            <div class = "contact-info-upper-container">
+                <div class = "contact-info-container">
+                    <img src = "./assets/linkedin.png" alt = "Linkedin Icon" class = "icon contact-icon"/>
+                    <p><a href = "https://www.linkedin.com/in/zachary-shipley-7950b6228/">LinkedIn</a></p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <nav>
+                <div class = "nav-links-container">
+                    <ul class = "nav-links">
+                        <li><a href = "#about">About</a></li>
+                        <li><a href = "#experience">Experience</a></li>
+                        <li><a href = "#projects">Projects</a></li>
+                        <li><a href = "#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <p>Copyright &#169; 2025 Zachary Shipley. All Rights Reserved.</p>
+        </footer>
+        <Script src="script.js"></Script>
+    </body>
+</html>

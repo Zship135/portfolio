@@ -5,6 +5,7 @@
     }
     #hamburger-nav {
         display: flex;
+
     }
 }
 
@@ -16,3 +17,62 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .hamburger-nav {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+    }
+
+    .hamburger-menu {
+        display: inline-block;
+    }
+
+    section {
+        padding: 1rem;
+        margin: 0 auto;
+    }
+
+    /* Remove horizontal padding on container for better centering */
+    #profile .container,
+    #about .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Remove bootstrap .row horizontal shifting */
+    #profile .row,
+    #about .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        justify-content: center; /* force flex centering for content */
+    }
+
+    /* Make image columns center perfectly */
+    #profile .col-md-4,
+    #about .col-lg-4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #profile img,
+    #about img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .lead {
+        padding: 0;
+        margin: 0;
+    }
+}
+

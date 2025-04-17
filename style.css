@@ -152,7 +152,6 @@ a:hover {
 
 section {
     padding-top: 4vh;
-    height: 96vh;
     margin: 0 10rem;
     box-sizing: border-box;
     min-height: fit-content;
@@ -170,41 +169,27 @@ section {
     gap: 5rem;
     height: 80vh;
 }
-.section_pic-container {
-    display: flex;
-    height: 400px;
-    width: 400px;
-    margin: auto 0;
-}
-
-.section_text {
-    align-self: center;
-    text-align: center;
-}
-
-.section_text_p {
-    font-weight: 600;
-}
-
-.section_text_p1 {
-    text-align: center;
-}
-
-.section_text_p2 {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-}
-
-.title {
-    font-size: 3rem;
-    text-align: center;
-}
 
 #socials-container {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
     gap: 1rem;
+}
+
+.btn-primary:hover {
+    background: rgb(3, 169, 252);
+    color: white;
+}
+
+.btn-outline-dark {
+    background: black;
+    color: white;
+}
+
+.btn-outline-dark:hover {
+    background: white;
+    color: black;
 }
 
 /* ICONS */
@@ -225,6 +210,7 @@ section {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    flex-wrap: nowrap;
 }
 
 .btn {
@@ -233,6 +219,10 @@ section {
     padding: 1rem;
     width: 8rem;
     border-radius: 2rem;
+    text-decoration: none;
+}
+.btn:hover {
+    text-decoration: none;
 }
 
 .btn-color-1, .btn-color-2 {
@@ -266,8 +256,23 @@ section {
 
 /* ABOUT SECTION */
 
-#about {
-    position: relative;
+#about img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#about h3 {
+    font-size: 1.5rem;
+    color: #007bff; /* Bootstrap primary color */
+}
+
+#about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #6c757d;
+    margin-bottom: 50px;
 }
 
 .about-containers {
@@ -310,10 +315,13 @@ section {
     margin: auto 0;
 }
 
+
+
 /* EXPERIENCE SECTION */
 
 #experience {
-    position: relative;
+    margin-top: 50px;
+    padding-top: 20px;
 }
 
 .experience-subtitle {

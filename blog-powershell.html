@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="mediaqueries.css">
+    </head>
+    <body>
+        <nav id = "desktop-nav">
+            <div class = "logo">Zachary Shipley</div>
+            <div>
+                <ul class = "nav-links">
+                    <li><a href = "index.html">Home</a></li>
+                    <li><a href = "blog.html">Blog</a></li>
+                </ul>
+            </div> 
+        </nav>
+        <nav id = "hamburger-nav">
+            <div class = "logo">Zachary Shipley</div>
+            <div class = "hamburger-menu">
+                <div class = "hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class = "menu-links">
+                        <li><a href = "#contact" onclick="toggleMenu()">Home</a></li>
+                        <li><a href = "blog.html" onclick="toggleMenu()">Blog</a></li>
+                </div>
+            </div>
+        </nav>
+        <!-- Write Blog here -->
+        <!-- Title -->
+        <section id = "blog-powershell" class = "py-5 by-light" style = "min-height: 300px;">
+            <div class = "container text-center mb-5">
+                <h1 class = "logo">My Journey With Powershell</h1>
+            </div>
+            <pre class = "ms-4">
+
+                    4/22/2025
+
+                        As a college student I am always looking for opportunities to learn new skills and improve my 
+                    knowledge. I saw some IT professionals on LinkedIn recently discussing powershell and I recognized
+                    that I had never used it before and wanted to learn it. I have always been interested in getting started
+                    but was not quite sure how to begin. 
+                        Since I recently got a new laptop I have been appreciating the clean Windows Install. Over some 
+                    time I have been installing various softwares and programs for school and personal use.
+                    I want to keep this as best I can and figured Powershell's ability to automate file management
+                    is the perfect way to start!
+                        The script I made is simple but effective. The idea is the have a script that will search your files
+                    and calculate the last time it was opened, and if that time exceeds a threshold, it will put it
+                    into a "archive" folder.
+
+                        I first had to make some variables to hold the paths of my downloads folder and the new archive folder.
+                    I also set the threshold to 30 days at the top of the program.
+                    <pre class = "code-block">
+                        $downloadsFolder = [Environment]::GetFolderPath("UserProfile") + "\Downloads"
+                        $archiveFolder = Join-Path -Path $downloadsFolder -ChildPath "Archived_Files"
+                        $daysThreshold = 30
+
+                        $currentDate = Get-Date
+                    </pre>
+                        The next step was to check if the archive folder exists, and if not, then create it.
+                    This is done with the Test-Path cmdlet.
+                    <pre class = "code-block">
+                        if (-not (Test-Path $archiveFolder)) {
+                            New-Item -ItemType Directory -Path $archiveFolder
+                        }
+                    </pre>
+                            So now that the folder is created, we have to search through the downloads folder and calculate
+                    the time between the last access time and the current time.
+                    This is done with the Get-ChildItem cmdlet, which gets all the files in the downloads folder.
+                    <pre class = "code-block">
+                        $files = Get-childItem -Path $downloadsFolder -File
+
+                        $filesToArchive = $files | Where-Object {
+                            $lastAccess = $_.LastAccessTime
+                            $fileAge = $currentDate - $lastAccess
+                            $fileAge.Days -ge $daysThreshold
+                        }
+
+                        foreach ($file in $filesToArchive) {
+                            # Move the file to the archive folder
+                            $destination = Join-Path -Path $archiveFolder -ChildPath $file.Name
+                        
+                            try {
+                                # Move file
+                                Move-Item -Path $file.FullName -Destination $destination
+                                Write-Host "Archived: $($file.Name)"
+                            } catch {
+                                Write-Host "Failed to archive: $($file.Name)"
+                            }
+                        }
+                    </pre>
+                        This program is short and simple, but is a great way to learn the basics of Powershell.
+                    From this project I was able to better organize my files and learn how to use Powershell to automate tasks.
+            </pre>
+        </section>
+
+
+        
+
+        <footer class="bg-dark text-light py-4 mt-5">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <!-- Navigation Links -->
+                    <div class="col-12 col-md-auto mb-3 mb-md-0">
+                        <ul class="nav justify-content-center justify-content-md-start">
+                            <li class="nav-item">
+                                <a class="nav-link px-2 text-light" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link px-2 text-light" href="blog.html">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <!-- Copyright -->
+                    <div class="col-12 col-md-auto text-center text-md-end">
+                        <small class="d-block text-muted">
+                            &copy; 2025 Zachary Shipley. All Rights Reserved.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </footer>        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+        <Script src="script.js"></Script>
+    </body>
+</html>

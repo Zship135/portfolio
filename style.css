@@ -9,6 +9,7 @@
 
 body {
     font-family: 'Poppins', sans-serif; 
+    padding-top: 100px;
 }
 
 html {
@@ -29,6 +30,13 @@ a, .btn {
 
 #desktop-nav, #hamburger-nav {
     border-bottom: 2px solid black; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above other elements */
+    background-color: white; /* Optional: Set a background color to avoid transparency issues */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav, .nav-links {
@@ -431,6 +439,28 @@ article {
 
 footer p {
     text-align: center;
+}
+
+pre {
+    background-color: #f8f9fa; 
+    padding: 1rem; 
+    border-radius: 0.5rem; 
+    overflow-x: auto; 
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;    
+}
+
+.code-block {
+    background-color: black;
+    color: rgb(245, 66, 233); 
+    padding: 1rem; 
+    border-radius: 0.1rem; 
+    overflow-x: auto; 
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;  
+    width: 70%; /* Adjust the percentage as needed */  
+    margin: 0 auto; /* Center the block */
+    text-align: left; /* Align text to the left */
 }
 
 

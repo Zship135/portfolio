@@ -19,6 +19,17 @@
 }
 
 @media screen and (max-width: 768px) {
+    
+    #desktop-nav {
+        height: 50px;
+        padding: 0.1rem;
+        font-size: 0.9rem;
+    }
+
+    body {
+        padding-top: 120px;
+    }
+
     .hamburger-nav {
         display: block;
         position: absolute;
